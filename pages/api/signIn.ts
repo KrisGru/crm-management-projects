@@ -7,12 +7,18 @@ export default async(req: NextApiRequest, res: NextApiResponse) => {
     return res.status(405).json({ message: 'Method not allowed'})
   }
   try {
-    let user = req.body
-    const savedUser = await prisma.user.create({
-      data: user
-    });
-    console.log('savedUser', savedUser)
-    res.status(200).json({savedUser, from: "CREATE"})
+    const {email, password }= req.body
+    console.log(email)
+    const user = await prisma.user.findMany({
+      where: {
+        email,
+        password,
+      },
+    })
+    if(user.length === 0) {
+      throw new Error
+    }
+    res.status(200).json({user, from: "SIGNIN" })
   } catch (error) {
     res.status(400).json({ message: 'Something went wrong!' })
   }
