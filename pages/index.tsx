@@ -21,6 +21,7 @@ const options = [
 ]
 
 export default function Home({ initialUsers }) {
+   const [ showRegisterForm, setShowRegisterForm ] = useState(false)
    const [ users, setUsers] = useState(initialUsers);
    const [ firstName, setFirstName] = useState("");
    const [ lastName, setLastName] = useState("");
@@ -79,10 +80,10 @@ export default function Home({ initialUsers }) {
           </div>
         </Box>
 
-          <p>OR</p>
-
+        <button onClick={()=> setShowRegisterForm(!showRegisterForm)}>register</button>
         <Box
           component="form"
+          className={showRegisterForm ? "register-on" : "register-off"}
           sx={{'& > :not(style)': { m: 1, width: '25ch' },}} 
           onSubmit={(e) => {
             e.preventDefault(); 
