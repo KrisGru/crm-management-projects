@@ -1,22 +1,20 @@
 // main colors {
 //     green: #248f47;
-//     bg-container: rgba(255, 230, 204, 0.8);
-
 // }
 
 .root {
     background-image: url(../assets/bg-home.jpg);
     background-size: cover;
-    height: 100vh;
+    min-height: calc(100vh - 50px);
+    padding-top: 10vh;
     text-align: -webkit-center;
 }
 
 .container {
     background-color: white;
     padding: 2em 1em 1em;
-    margin-top: 10vh;
     border-radius: 30px;
-    max-width: 300px;
+    max-width: 400px;
     min-height: 350px;
     display: grid;
     &__expanded {
@@ -27,36 +25,59 @@
     }
 }
 
-.registerForm-off {
+.loginForm {
+    .forgotPasswordText {
+        cursor: pointer;
+        font-size: 0.8rem;
+        margin: 0px auto 20px;
+    }
+}
+.form-off {
     display: none;
-    transition-property: display;
-    transition-duration: 5s;
 }
 
-.registerForm-on {
+.form-on {
     display: block;
 }
 
 .topnav {
     overflow: hidden;
+    text-align: center;
     background-color:white;
     padding: 0px 50px;
     position: sticky;
-    display: flex;
-    max-height: 69px;
-    .navSpaceBetween {
-        flex-grow: 1;
-    }
+    max-height: 70px;
 }
   
-  .navLink {
+.navLink {
+    font-size: 20px;
     padding: 15px;
     margin: 0px 20px;
     text-decoration: none;
-  }
-  
-  .navLink.active {
+}
+
+.navLink.active {
     color: black;
     display: list-item;
     list-style: inside;
-  }
+}
+
+.containedButton {
+    background-color:  #248f47;
+    &:hover {
+        background-color: #004d1a;
+    }
+}
+
+.formChange {
+    margin-top: 30px;
+    border-top: 2px solid #004d1a;
+}
+
+
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 1.2rem;
+}
