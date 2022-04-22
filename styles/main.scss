@@ -1,83 +1,43 @@
-// main colors {
-//     green: #248f47;
-// }
+@import "dashboard.scss", "entryForms.scss";
 
-.root {
-    background-image: url(../assets/bg-home.jpg);
-    background-size: cover;
-    min-height: calc(100vh - 50px);
-    padding-top: 10vh;
-    text-align: -webkit-center;
-}
-
-.container {
-    background-color: white;
-    padding: 2em 1em 1em;
-    border-radius: 30px;
-    max-width: 400px;
-    min-height: 350px;
-    display: grid;
-    &__expanded {
-        max-width: 600px;
-    }
-    .registerBtn {
-        color: black;
-    }
-}
-
-.loginForm {
-    .forgotPasswordText {
-        cursor: pointer;
-        font-size: 0.8rem;
-        margin: 0px auto 20px;
-    }
-}
-.form-off {
-    display: none;
-}
-
-.form-on {
-    display: block;
+:root {
+  --shadow: 0 1px 5px grey;
+  --logo-green: #248f47;
 }
 
 .topnav {
-    overflow: hidden;
-    text-align: center;
-    background-color:white;
-    padding: 0px 50px;
-    position: sticky;
-    max-height: 70px;
+  overflow: hidden;
+  text-align: center;
+  background-color: white;
+  padding: 0px 50px;
+  position: sticky;
+  max-height: 70px;
 }
-  
+
 .navLink {
-    font-size: 20px;
-    padding: 15px;
-    margin: 0px 20px;
-    text-decoration: none;
+  font-size: 20px;
+  padding: 15px;
+  margin: 0px 20px;
+  text-decoration: none;
 }
 
 .navLink.active {
-    color: black;
-    display: list-item;
-    list-style: inside;
+  color: black;
+  display: list-item;
+  list-style: inside;
 }
 
 .containedButton {
-    background-color:  #248f47;
-    &:hover {
-        background-color: #004d1a;
-    }
+  background-color: #248f47;
+  &:hover {
+    background-color: #004d1a;
+  }
 }
-
-.formChange {
-    margin-top: 30px;
-    border-top: 2px solid #004d1a;
-}
-
 
 .footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    font-size: 1.2rem;
+  background-color: #fff;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  max-height: 50px;
 }

@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "utils/contextState.js"  ],
   "exclude": [
     "node_modules"
   ]

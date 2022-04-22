@@ -1,0 +1,51 @@
+// css for dashboard
+.container1 {
+    display: grid;
+    gap: 20px;
+    margin: 0 50px;
+    grid-template-areas: 
+        'navbar navbar navbar navbar'
+        'side-navbar content content statistic-a'
+        'side-navbar content content statistic-b'
+        'side-navbar content content statistic-c';
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.navbar {
+    grid-area: navbar;
+    background-color: #fff;
+    text-align: center;
+    min-height: 80px;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+}
+
+.side-navbar {
+    grid-area: side-navbar;
+    background-color: green;
+}
+
+.content {
+    grid-area: content;
+    box-shadow: var(--shadow);
+}
+
+.statistic-a {
+    grid-area: statistic-a;
+    box-shadow: var(--shadow);
+    min-height: 300px;
+}
+
+.statistic-b {
+    grid-area: statistic-b;
+    box-shadow: var(--shadow);
+    min-height: 300px;
+}
+
+.statistic-c {
+    grid-area: statistic-c;
+    box-shadow: var(--shadow);
+    min-height: 300px;
+}
