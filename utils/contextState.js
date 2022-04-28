@@ -1,21 +1,14 @@
 import { useState } from "react";
-
 import { createContext, useContext } from "react";
 
 export const AppContext = createContext(null);
 
 export function AppWrapper({ children }) {
-  const [test, setTest] = useState("tescik-start");
-  const [user, setUser] = useState({});
-  let sharedState = {
-    test,
-    setTest,
-    user,
-    setUser,
-  };
-
+  const [user, setUser] = useState(null);
   return (
-    <AppContext.Provider value={sharedState}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ user, setUser }}>
+      {children}
+    </AppContext.Provider>
   );
 }
 

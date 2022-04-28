@@ -2,7 +2,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 // import prisma from '../../lib/prisma';
 
-import { PrismaClient, Prisma } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export default async function create(
@@ -13,12 +13,19 @@ export default async function create(
     return res.status(405).json({ message: "Method not allowed" });
   }
   try {
-    let user = req.body;
+    // let user = req.body;
     const savedUser = await prisma.user.create({
-      data: user,
+      data: {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        role: req.body.role,
+        email: req.body.email,
+        avatar: req.body.avatar,
+        password: req.body.password,
+      },
     });
     console.log("savedUser", savedUser);
-    res.status(200).json({ savedUser, from: "CREATE" });
+    res.status(200).json(savedUser);
   } catch (error) {
     res.status(400).json({ message: "Something went wrong!" });
   }
